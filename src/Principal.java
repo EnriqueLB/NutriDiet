@@ -19,8 +19,7 @@ public class Principal extends javax.swing.JFrame {
     /**
      * Creates new form Principal
      */
-    Conexion con = new Conexion();
-    Connection cn = con.Conexionn();
+
     public Principal() {
         initComponents();
         pnlInfBasica.setVisible(false);
@@ -72,6 +71,7 @@ public class Principal extends javax.swing.JFrame {
         lblBorrar = new javax.swing.JLabel();
         lblAtras = new javax.swing.JLabel();
         jLabel13 = new javax.swing.JLabel();
+        jButton1 = new javax.swing.JButton();
         pnlContenido = new javax.swing.JPanel();
         jLabel4 = new javax.swing.JLabel();
         pnlInfBasica = new javax.swing.JPanel();
@@ -178,6 +178,14 @@ public class Principal extends javax.swing.JFrame {
         jLabel13.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel13.setText("Volver");
         pnlLateral.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 10, -1, -1));
+
+        jButton1.setText("jButton1");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+        pnlLateral.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 280, -1, -1));
 
         jPanel1.add(pnlLateral, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 230, 590));
 
@@ -425,15 +433,15 @@ public class Principal extends javax.swing.JFrame {
 
     private void lblInfBasicaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblInfBasicaMouseClicked
         if(txtBuscar.getText().equals("Buscar") || txtBuscar.getText().equals("")){showMessageDialog(this,"Ingrese un nombre");
-        pnlMasInf.setVisible(false);}else
-        pnlInfBasica.setVisible(true);
+        pnlMasInf.setVisible(false);}else{
+        pnlInfBasica.setVisible(true);pnlMasInf.setVisible(false);};
     }//GEN-LAST:event_lblInfBasicaMouseClicked
 
     private void lblMasInfMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblMasInfMouseClicked
         if(txtBuscar.getText().equals("Buscar") || txtBuscar.getText().equals("")){
             showMessageDialog(this,"Ingrese un nombre");
             pnlInfBasica.setVisible(false);
-        }else pnlMasInf.setVisible(true);
+        }else {pnlMasInf.setVisible(true); pnlInfBasica.setVisible(false);}
     }//GEN-LAST:event_lblMasInfMouseClicked
 
     private void lblBorrarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblBorrarMouseClicked
@@ -447,6 +455,14 @@ public class Principal extends javax.swing.JFrame {
         pnlInfBasica.setVisible(true);
         lblBorrar.setVisible(true);
     }//GEN-LAST:event_txtBuscarActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+       Conexion cc= new Conexion();
+        Connection kk = cc.Conexionn();
+        if(kk==null){
+            showMessageDialog(this,"No conecctado");
+        }else showMessageDialog(this,"Conedctado");
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -484,6 +500,7 @@ public class Principal extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton jButton1;
     private javax.swing.JCheckBox jCheckBox1;
     private javax.swing.JCheckBox jCheckBox2;
     private javax.swing.JCheckBox jCheckBox3;

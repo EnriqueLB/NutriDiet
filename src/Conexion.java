@@ -16,8 +16,9 @@ public class Conexion {
         try {
             Class.forName("com.myqsl.jdbc.Driver");
             cn = DriverManager.getConnection("jdbc:mysql://localhost/nutriex","root","atom1");
-            showMessageDialog(null,"Conexion Exitosa");
+            
         } catch (Exception e) {
+            System.out.print(e.getMessage());
         }return cn;
     }
 
