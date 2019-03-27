@@ -1,28 +1,13 @@
 import java.sql.*;
-import static javax.swing.JOptionPane.*;
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
-/**
- *
- * @author Enriquee
- */
 public class Conexion {
-    Connection cn;
-    public Connection Conexionn(){
-        try {
-            Class.forName("com.myqsl.jdbc.Driver");
-            cn = DriverManager.getConnection("jdbc:mysql://localhost/nutriex","root","atom1");
-            
-        } catch (Exception e) {
-            System.out.print(e.getMessage());
-        }return cn;
-    }
-
-    Statement createStatement(){
-        throw new UnsupportedOperationException("No soportado");
-    }
+     Connection conectar= null;
+     public Connection conexion(){
+         try{
+             Class.forName("org.gjt.mm.mysql.Driver");  //es el tipo de conexion
+             conectar=DriverManager.getConnection("jdbc:mysql://localhost/nutridiet","root","atom1");
+         }catch (Exception e){
+             System.out.print(e.getMessage());
+         }
+         return conectar;
+     }   
 }

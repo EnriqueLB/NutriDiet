@@ -458,7 +458,7 @@ public class Principal extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
        Conexion cc= new Conexion();
-        Connection kk = cc.Conexionn();
+        Connection kk = cc.conexion();
         if(kk==null){
             showMessageDialog(this,"No conecctado");
         }else showMessageDialog(this,"Conedctado");
